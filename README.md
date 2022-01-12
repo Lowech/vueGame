@@ -1,4 +1,4 @@
-https://lowech.github.io/vueGame/
+https://lowech.github.io/vueGame/dist/index.html
 # hello-world
 
 ## Project setup

@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: "/vueGame/"
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/vueGame/'
+    : '/'
     }

@@ -1,3 +1,6 @@
 module.exports = {
-    publicPath: "/vueGame/"
+    publicPath: "/vueGame/",
+    configureWebpack: {
+        devtool: 'source-map'
+      }
     }

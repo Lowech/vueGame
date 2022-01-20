@@ -1,57 +1,45 @@
 <template>
-  <h2 class="level-title">Round: {{ number }}</h2>
-  <button class="start-game" v-on:click="reverseMessage">Start</button>
-  <GameElement :start="start" />
-  <GameOptions/>
+  <div class="container-title">
+    <GameOptions />
+  </div>
 </template>
 
 <script>
 import GameOptions from './components/GameOptions.vue'
-import GameElement from './components/gameElement.vue'
-
 
 export default {
   name: 'App',
-  data () {
-    return {
-      picked: '',
-      number: "",
-      start: true,  
-    }
-  },
   components: {
     GameOptions,
-    GameElement
   },
   methods: {
     reverseMessage () {
-      this.start=false;
-      alert(this.start)
+      console.log(this.stability)
+      this.start=false; 
     }
   },
 }
 </script>
 
 <style lang="sass">
+*
+  padding: 0
+  margin: 0
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #2c3e50
-  margin-top: 60px
-.level-title
-  font-weight: 700
-  font-size: 25px
-.start-game
-  background-color: blue
-  color: white
-  font-size: 25px
-  width: 100px
-  outline-style: none
-  border: none
-  box-shadow: 4px 3px 5px 1px grey
-  border-radius: 5px
-  &:hover
-    cursor: pointer
+  display: flex
+  justify-content: center
+  height: 100vh
+  width: 100%
+.container-title
+  display: grid 
+  grid-template-columns: 2% minmax(200px, 300px) minmax(250px, auto) 2%
+  grid-template-rows: 50px 100px auto
+  min-width: 280px
+  height: 100%
+
 </style>

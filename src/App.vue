@@ -29,12 +29,12 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
   display: flex
   justify-content: center
   height: 100vh
   width: 100%
+  background-color: #FFE4C4
+
 .container-title
   display: grid 
   grid-template-columns: 2% minmax(200px, 300px) minmax(250px, auto) 2%

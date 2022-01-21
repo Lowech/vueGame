@@ -50,6 +50,8 @@ export default {
         this.numberLevel=0;
         this.numberTimes=0;
         this.numberOperations=0;
+        this.newArray.splice(0);
+        clearInterval(activeSetInterval);
       }
     },
     mounted() {
@@ -65,7 +67,7 @@ export default {
       }
  
       switch (this.idOption) {
-  case "Normal":  
+  case "Easy":  
        activeSetInterval = setInterval( () => {
         this.numberTimes++;
 
@@ -84,7 +86,7 @@ export default {
       ,1500)
     break;
 
-  case "Sound Only":
+  case "Medium":
     activeSetInterval = setInterval( () => {
         this.numberTimes++;
 
@@ -103,7 +105,7 @@ export default {
       ,1000)
     break;
 
-  case "Light Only":
+  case "Hard":
     activeSetInterval = setInterval( () => {
         this.numberTimes++;
 
@@ -122,8 +124,8 @@ export default {
       ,400)
     break;
 
-  case "Free board":  
-    activeSetInterval = setInterval( () => {
+  case "Only music":  
+   activeSetInterval =  setInterval( () => {
         this.numberTimes++;
 
         if( this.numberTimes==this.numberLevel){
@@ -138,6 +140,7 @@ export default {
 }
     },
   actionClick(e){
+    if(this.numberTimes<this.numberLevel)return;
     if(this.numberOperations<this.numberTimes){
       if(this.newArray[0].id == e.target.id){
           e.target.lastElementChild.play();
@@ -149,10 +152,11 @@ export default {
           this.randomClick(e);
     }
       }else{
-        alert("error")
+        alert("Вы ошиблись! Попробуйте снова")
          this.numberLevel=0;
           this.numberTimes=0;
            this.numberOperations=0;
+            this.newArray.splice(0)
         }
     }
   },
@@ -164,7 +168,7 @@ export default {
 .container-start
   display: grid
   grid-template-columns: auto
-  grid-template-rows: 50px 35px
+  grid-template-rows: 60px 35px
   max-width: 230px
   height: 85px
   order: 2
@@ -175,7 +179,7 @@ export default {
   font-weight: 700
   font-size: 25px
   display: inline-block
-  height: 20px
+  height: auto
   width: 100%
   text-align: left
   grid-row: 2/3
@@ -230,7 +234,7 @@ export default {
   display: inline-block
   width: 100%
   height: 100%
-  background-color: yellow
+  background-color: Orange
   border-bottom-right-radius: 50%  
 .game-element1, 
 .game-element2,
@@ -238,14 +242,14 @@ export default {
 .game-element4:hover
   cursor: pointer
 .game-element1:active
-  background-color: rgba(255, 99, 71, 0.1)
+  background-color: Yellow
 .game-element2:active
-  background-color: rgba(255, 99, 71, 0.1)
+  background-color: Yellow
 .game-element3:active
-  background-color: rgba(255, 99, 71, 0.1)
+  background-color: Yellow
 .game-element4:active
-  background-color: rgba(255, 99, 71, 0.1)
+  background-color: Yellow
 .colorTime
-  background-color: black
+  background-color: Yellow
 
 </style>

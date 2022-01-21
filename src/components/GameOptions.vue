@@ -2,16 +2,16 @@
   <div class="container" >
     <h1>Game Options:</h1>
     <div class="containerInput" >
-    <input  type="radio" id="Normal" value="Normal" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Normal">Normal</label>
+    <input class="itemInput" type="radio" id="Easy" value="Easy" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Easy">Easy</label>
     </div>
     <div class="containerInput">
-    <input  type="radio" id="Sound Only" value="Sound Only" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Sound Only">Sound Only</label>
+    <input class="itemInput" type="radio" id="Medium" value="Medium" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Medium">Medium</label>
     </div>
     <div class="containerInput">
-    <input  type="radio" id="Light Only" value="Light Only" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Light Only">Light Only</label>
+    <input class="itemInput" type="radio" id="Hard" value="Hard" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Hard">Hard</label>
     </div>
     <div class="containerInput">
-    <input  type="radio" id="Free board" value="Free board" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Free board">Free board</label>
+    <input class="itemInput" type="radio" id="Only music" value="Only music" v-model="picked" v-on:click="idElement" ref="input"><label class="itemLabel" for="Only music">Only music</label>
     </div>
   </div>
   <GameElement :idOption="idOption" />
@@ -45,6 +45,7 @@ export default {
     display: flex
     flex-direction: column
     flex-wrap: wrap
+    justify-content: space-evenly
     align-items: flex-start
     max-width: 230px
     height: 200px
@@ -55,10 +56,14 @@ export default {
 .containerInput
     display: inline-block
     width: auto
+.itemInput
+  vertical-align: middle
+  zoom: 1.3
 .itemLabel
     color: black
     font-size: 15px
-    padding-left: 5px
+    padding-left: 15px
+    font-weight: 600
 h3
     color: black
     font-size: 20px
